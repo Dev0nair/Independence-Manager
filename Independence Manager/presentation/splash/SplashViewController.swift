@@ -17,7 +17,7 @@ class SplashViewController: UIViewController {
         
         lbCenterText.text = "Splash!"
         
-        doAfter(seconds: Constants.SPLASH_TIME) {
+        doAfter(seconds: AppConstants.SPLASH_TIME) {
             self.navigateTo(segueId: Constants.Navigation.MAIN_NAV)
         }
     }

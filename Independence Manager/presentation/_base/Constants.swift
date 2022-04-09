@@ -9,8 +9,6 @@ import Foundation
 
 struct Constants {
     
-    static let SPLASH_TIME = 2.0
-    
     struct Navigation {
         static let MAIN_NAV = "goToMainNav"
     }
