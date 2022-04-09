@@ -10,4 +10,6 @@ import Foundation
 struct AppConstants {
     
     static let SPLASH_TIME = 2.0
+    
+    static let APP_COMPILATION = CompilationType.PRO
 }

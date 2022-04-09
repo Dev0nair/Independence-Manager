@@ -10,10 +10,10 @@ import UIKit
 class SplashViewController: UIViewController {
 
     @IBOutlet weak var lbCenterText: UILabel!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         lbCenterText.text = "Splash!"
         

@@ -10,13 +10,16 @@ import UIKit
 class ConfigurationViewController: UIViewController {
 
     @IBOutlet weak var lbCenterText: UILabel!
+    private let foodRepository: FoodProtocol = FoodRepositoryFactory.getRepository()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         title = "Configuration"
-        lbCenterText.text = "Configuration!"
+        
+        lbCenterText.text = "Hay \(foodRepository.getListFood().count) comidas registradas."
     }
     
 

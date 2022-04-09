@@ -32,7 +32,7 @@
                     </view>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="lbCenterText" destination="dLA-Wu-RJR" id="3yB-cs-k55"/>
+                        <outlet property="lbCenterText" destination="dLA-Wu-RJR" id="DHA-bo-oyD"/>
                         <segue destination="lA2-kH-4j2" kind="show" identifier="goToMainNav" animates="NO" id="62w-vI-kSk"/>
                     </connections>
                 </viewController>
