@@ -14,15 +14,33 @@ class DItemRepository : BaseRepo, ItemProtocol {
     override init() {
         super.init()
         
-        self.listItems = [Item(context: super.context), Item(context: super.context), Item(context: super.context) ]
+        introducirDatosDePrueba()
+    }
+    
+    private func introducirDatosDePrueba() {
+        let ingr1 = Item(context: self.context)
+        ingr1.idType = AppConstants.DBConstants.INGREDIENT_TYPE
+        self.newItem(item: ingr1)
+        
+        let ingr2 = Item(context: self.context)
+        ingr2.idType = AppConstants.DBConstants.INGREDIENT_TYPE
+        self.newItem(item: ingr2)
+        
+        let prod1 = Item(context: self.context)
+        prod1.idType = UUID.init()
+        self.newItem(item: prod1)
     }
     
     func getAllIngredients() -> [Item] {
-        return listItems
+        return listItems.filter { item in
+            item.idType == AppConstants.DBConstants.INGREDIENT_TYPE
+        }
     }
     
     func getNonIngredientProducts() -> [Item] {
-        return listItems
+        return listItems.filter { item in
+            item.idType != AppConstants.DBConstants.INGREDIENT_TYPE
+        }
     }
     
     func getItem(idItem: UUID) -> Item? {
