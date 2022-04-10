@@ -9,11 +9,18 @@ import Foundation
 
 class FoodRepositoryFactory {
     
-    static func getRepository() -> FoodProtocol {
+    private static let INSTANCE: FoodProtocol = createRepository()
+    
+    private static func createRepository() -> FoodProtocol {
+        print("FoodRepository: Created")
         switch(AppConstants.APP_COMPILATION) {
             case CompilationType.DEBUG: return DFoodRepository()
             case CompilationType.PRO: return PFoodRepository()
         }
+    }
+    
+    static func getRepository() -> FoodProtocol {
+        return INSTANCE;
     }
     
 }

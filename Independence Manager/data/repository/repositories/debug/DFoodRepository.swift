@@ -42,4 +42,7 @@ class DFoodRepository : FoodProtocol {
         return self.listFood.first(where: { $0.id == idFood } )
     }
     
+    func getIngredients(idFood: UUID) -> [FoodComposition] {
+        return []
+    }
 }

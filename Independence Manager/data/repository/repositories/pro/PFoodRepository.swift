@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class PFoodRepository : FoodProtocol {
-    
+        
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func getListFood() -> [Food] {
@@ -52,6 +52,16 @@ class PFoodRepository : FoodProtocol {
             return true
         } catch {
             return false
+        }
+    }
+    
+    func getIngredients(idFood: UUID) -> [FoodComposition] {
+        do {
+            return try context.fetch(FoodComposition.fetchRequest()).filter({ foodComp in
+                foodComp.idFood == idFood
+            })
+        } catch {
+            return []
         }
     }
 }

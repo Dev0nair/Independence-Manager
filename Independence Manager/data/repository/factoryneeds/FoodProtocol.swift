@@ -12,6 +12,9 @@ protocol FoodProtocol {
     func getListFood() -> [Food]
     func insertFood(food: Food) -> Bool
     func deleteFood(idFood: UUID) -> Bool
+    
     func getFood(idFood: UUID) -> Food?
+    func getIngredients(idFood: UUID) -> [FoodComposition]
+    
     
 }

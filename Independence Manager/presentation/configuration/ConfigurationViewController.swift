@@ -10,8 +10,7 @@ import UIKit
 class ConfigurationViewController: UIViewController {
 
     @IBOutlet weak var lbCenterText: UILabel!
-    private let foodRepository: FoodProtocol = FoodRepositoryFactory.getRepository()
-
+    private let confVM = ConfigurationViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,18 +18,28 @@ class ConfigurationViewController: UIViewController {
         // Do any additional setup after loading the view.
         title = "Configuration"
         
-        lbCenterText.text = "Hay \(foodRepository.getListFood().count) comidas registradas."
+        
+        configListener()
+        
+        confVM.loadInfo()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillDisappear(_ animated: Bool) {
+        confVM.cancel()
     }
-    */
+}
 
+extension ConfigurationViewController {
+    
+    func configListener() {
+        self.confVM.configInfo.listen { (_info: ObjConfigTopInfo?) in
+            if let info = _info {
+                self.applyInfo(info: info)
+            }
+        }
+    }
+    
+    func applyInfo(info: ObjConfigTopInfo) {
+        print(info)
+    }
 }

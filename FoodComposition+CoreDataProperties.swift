@@ -19,6 +19,7 @@ extension FoodComposition {
     @NSManaged public var id: UUID?
     @NSManaged public var idFood: UUID?
     @NSManaged public var idItem: UUID?
+    @NSManaged public var itemQuantity: Double
 
 }
 
