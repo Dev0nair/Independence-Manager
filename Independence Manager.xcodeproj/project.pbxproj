@@ -54,6 +54,7 @@
 		1CE1B0ED27FED9C700EDEE79 /* Independence_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE1B0EC27FED9C700EDEE79 /* Independence_ManagerTests.swift */; };
 		1CE1B0F727FED9C700EDEE79 /* Independence_ManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE1B0F627FED9C700EDEE79 /* Independence_ManagerUITests.swift */; };
 		1CE1B0F927FED9C700EDEE79 /* Independence_ManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE1B0F827FED9C700EDEE79 /* Independence_ManagerUITestsLaunchTests.swift */; };
+		1CE734382802ECA300D49F0C /* BaseRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE734372802ECA300D49F0C /* BaseRepo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		1CE1B0F227FED9C700EDEE79 /* Independence ManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Independence ManagerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CE1B0F627FED9C700EDEE79 /* Independence_ManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Independence_ManagerUITests.swift; sourceTree = "<group>"; };
 		1CE1B0F827FED9C700EDEE79 /* Independence_ManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Independence_ManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1CE734372802ECA300D49F0C /* BaseRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 			children = (
 				1C1FAB6D2801E6D7004821EB /* pro */,
 				1C1FAB6C2801E6D3004821EB /* debug */,
+				1CE734372802ECA300D49F0C /* BaseRepo.swift */,
 			);
 			path = repositories;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				1C1FAB5C2801E564004821EB /* Item+CoreDataProperties.swift in Sources */,
 				1C1FAB602801E564004821EB /* Type+CoreDataProperties.swift in Sources */,
 				1C13268D28019ADF00F3CBD9 /* AppConstants.swift in Sources */,
+				1CE734382802ECA300D49F0C /* BaseRepo.swift in Sources */,
 				1CE1B0D327FED9C600EDEE79 /* AppDelegate.swift in Sources */,
 				1C1FAB572801E564004821EB /* ScheduledFood+CoreDataClass.swift in Sources */,
 				1CD8898E2802BD1A00977645 /* ObjFood.swift in Sources */,

@@ -6,25 +6,22 @@
 //
 
 import Foundation
-import UIKit
 import CoreData
 
-class DItemRepository : ItemProtocol {
+class DItemRepository : BaseRepo, ItemProtocol {
+    private var listItems = [Item]()
     
-    let context: NSManagedObjectContext
-
-    private var listItems: [Item]
-    
-    init() {
-        self.context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        self.listItems = [Item(context: context), Item(context: context), Item(context: context) ]
+    override init() {
+        super.init()
+        
+        self.listItems = [Item(context: super.context), Item(context: super.context), Item(context: super.context) ]
     }
     
     func getAllIngredients() -> [Item] {
         return listItems
     }
     
-    func getAllProducts() -> [Item] {
+    func getNonIngredientProducts() -> [Item] {
         return listItems
     }
     

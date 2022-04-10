@@ -6,27 +6,27 @@
 //
 
 import Foundation
+import UIKit
 
 class Box<T> {
     
-    private var item: T? = nil {
-        didSet {
-            listener(item)
-        }
-    }
+    private var item: T? = nil
     
-    private var listener: (T?) -> Void = { (_: T?) in } {
+    private var listener: ((T?) -> Void)? = nil {
         didSet {
-            listener(item)
+            notifyItemChange()
         }
     }
     
     func notifyItemChange() {
-        listener(item)
+        if let listenerMethod = listener {
+            listenerMethod(item)
+        }
     }
     
     func setItem(item: T?) {
         self.item = item
+        self.notifyItemChange()
     }
     
     func getItem() -> T? {
@@ -35,9 +35,10 @@ class Box<T> {
     
     func listen(onItemSet: @escaping (T?) -> Void) {
         self.listener = onItemSet
+        self.notifyItemChange()
     }
     
     func cancel() {
-        self.listener = { (_: T?) in }
+        self.listener = nil
     }
 }

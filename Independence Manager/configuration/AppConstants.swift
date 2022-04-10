@@ -12,4 +12,7 @@ struct AppConstants {
     static let SPLASH_TIME = 2.0
     static let APP_COMPILATION = CompilationType.DEBUG
     
+    struct DBConstants {
+        static let INGREDIENT_TYPE = UUID.init(uuidString: "001")
+    }
 }

@@ -6,17 +6,14 @@
 //
 
 import Foundation
-import UIKit
 import CoreData
 
-class DFoodRepository : FoodProtocol {
+class DFoodRepository : BaseRepo, FoodProtocol {
+    private var listFood = [Food]()
     
-    let context: NSManagedObjectContext
-
-    private var listFood: [Food]
-    
-    init() {
-        self.context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    override init() {
+        super.init()
+        
         self.listFood = [Food(context: context), Food(context: context), Food(context: context) ]
     }
     

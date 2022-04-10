@@ -20,5 +20,6 @@ class ConfigurationViewModel {
     
     func cancel() {
         configInfo.cancel()
+        getConfigInfo.cancelAll()
     }
 }

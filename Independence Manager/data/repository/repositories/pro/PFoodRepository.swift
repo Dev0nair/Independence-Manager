@@ -8,10 +8,8 @@
 import Foundation
 import UIKit
 
-class PFoodRepository : FoodProtocol {
-        
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+class PFoodRepository : BaseRepo, FoodProtocol {
+            
     func getListFood() -> [Food] {
         
         do {

@@ -6,36 +6,25 @@
 //
 
 import Foundation
-import UIKit
 
-class PItemRepository : ItemProtocol {
-    
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+class PItemRepository : BaseRepo, ItemProtocol {
     
     func getAllIngredients() -> [Item] {
         do {
-            let idIngredientType = getIngredientIdType()
-            
             return try context.fetch(Item.fetchRequest())
                 .filter({ item in
-                    return item.idType == idIngredientType
+                    return item.idType == AppConstants.DBConstants.INGREDIENT_TYPE
                 })
         } catch {
             return []
         }
     }
     
-    func getIngredientIdType() -> UUID {
-        return UUID.init()
-    }
-    
-    func getAllProducts() -> [Item] {
+    func getNonIngredientProducts() -> [Item] {
         do {
-            let idIngredientType = getIngredientIdType()
-            
             return try context.fetch(Item.fetchRequest())
                 .filter({ item in
-                    return item.idType != idIngredientType
+                    return item.idType != AppConstants.DBConstants.INGREDIENT_TYPE
                 })
         } catch {
             return []
@@ -43,9 +32,7 @@ class PItemRepository : ItemProtocol {
     }
     
     func getItem(idItem: UUID) -> Item? {
-        do {
-            let idIngredientType = getIngredientIdType()
-            
+        do {            
             return try context.fetch(Item.fetchRequest())
                 .first(where: { item in
                     item.id == idItem

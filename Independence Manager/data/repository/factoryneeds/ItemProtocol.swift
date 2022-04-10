@@ -10,7 +10,7 @@ import Foundation
 protocol ItemProtocol {
     
     func getAllIngredients() -> [Item]
-    func getAllProducts() -> [Item]
+    func getNonIngredientProducts() -> [Item]
     
     func getItem(idItem: UUID) -> Item?
     func newItem(item: Item) -> Bool
