@@ -23,7 +23,6 @@ class ConfigurationViewController: UIViewController {
         // Do any additional setup after loading the view.
         title = "Configuration"
         
-        
         configListener()
         
         confVM.loadInfo()
@@ -37,9 +36,9 @@ class ConfigurationViewController: UIViewController {
 extension ConfigurationViewController {
     
     func configListener() {
-        self.confVM.configInfo.listen { (_info: ObjConfigTopInfo?) in
+        self.confVM.configInfo.listen { [weak self] _info in
             if let info = _info {
-                self.applyInfo(info: info)
+                self?.applyInfo(info: info)
             }
         }
     }

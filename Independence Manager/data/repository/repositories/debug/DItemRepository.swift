@@ -18,17 +18,21 @@ class DItemRepository : BaseRepo, ItemProtocol {
     }
     
     private func introducirDatosDePrueba() {
-        let ingr1 = Item(context: self.context)
-        ingr1.idType = AppConstants.DBConstants.INGREDIENT_TYPE
+        let ingr1 = self.createEntity()
+        ingr1.idType = UUID.init()
         self.newItem(item: ingr1)
         
-        let ingr2 = Item(context: self.context)
+        let ingr2 = self.createEntity()
         ingr2.idType = AppConstants.DBConstants.INGREDIENT_TYPE
         self.newItem(item: ingr2)
         
-        let prod1 = Item(context: self.context)
+        let prod1 = self.createEntity()
         prod1.idType = UUID.init()
         self.newItem(item: prod1)
+    }
+    
+    private func createEntity() -> Item {
+        return Item(entity: NSEntityDescription.entity(forEntityName: "Item", in: context)!, insertInto: nil)
     }
     
     func getAllIngredients() -> [Item] {

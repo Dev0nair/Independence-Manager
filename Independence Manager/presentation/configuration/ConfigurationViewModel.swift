@@ -11,10 +11,10 @@ class ConfigurationViewModel {
     
     private let getConfigInfo = UCGetConfigTopInfo()
     var configInfo: Box<ObjConfigTopInfo> = Box()
-    
+
     func loadInfo() {
         getConfigInfo.execute { info in
-            self.configInfo.setItem(item: info)
+            self.configInfo.item = info
         }
     }
     

@@ -20,7 +20,7 @@ class ItemRepositoryFactory {
     }
     
     static func getInstance() -> ItemProtocol {
-        return INSTANCE
+        return self.INSTANCE
     }
     
 }

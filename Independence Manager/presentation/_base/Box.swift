@@ -10,7 +10,17 @@ import UIKit
 
 class Box<T> {
     
-    private var item: T? = nil
+    init(_ defaultValue: T? = nil) {
+        if let defVal = defaultValue {
+            item = defVal
+        }
+    }
+    
+    var item: T? = nil {
+        didSet {
+            notifyItemChange()
+        }
+    }
     
     private var listener: ((T?) -> Void)? = nil {
         didSet {
@@ -18,27 +28,18 @@ class Box<T> {
         }
     }
     
-    func notifyItemChange() {
+    private func notifyItemChange() {
         if let listenerMethod = listener {
             listenerMethod(item)
         }
     }
     
-    func setItem(item: T?) {
-        self.item = item
-        self.notifyItemChange()
-    }
-    
-    func getItem() -> T? {
-        return self.item
-    }
-    
     func listen(onItemSet: @escaping (T?) -> Void) {
         self.listener = onItemSet
-        self.notifyItemChange()
     }
     
     func cancel() {
         self.listener = nil
     }
+    
 }
