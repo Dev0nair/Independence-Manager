@@ -11,5 +11,6 @@ struct Constants {
     
     struct Navigation {
         static let MAIN_NAV = "goToMainNav"
+        static let INICIO_NAV = "goToInicio"
     }
 }

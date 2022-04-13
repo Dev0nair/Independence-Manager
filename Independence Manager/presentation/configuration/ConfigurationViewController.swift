@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConfigurationViewController: UIViewController {
+class ConfigurationViewController: UIBaseViewController{
 
     
     @IBOutlet weak var lbUltimaCopiaSeguridad: UILabel!

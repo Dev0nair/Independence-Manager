@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+class SplashViewController: UIBaseViewController {
 
     @IBOutlet weak var lbCenterText: UILabel!
         
@@ -18,7 +18,7 @@ class SplashViewController: UIViewController {
         lbCenterText.text = "Splash!"
         
         doAfter(seconds: AppConstants.SPLASH_TIME) {
-            self.navigateTo(segueId: Constants.Navigation.MAIN_NAV)
+            self.navigateTo(Constants.Navigation.MAIN_NAV, params: ("Hola", 20))
         }
     }
     

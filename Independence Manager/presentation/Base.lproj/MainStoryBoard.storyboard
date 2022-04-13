@@ -154,11 +154,27 @@
                         <outlet property="lbNumIngredientes" destination="NeP-Dz-fw4" id="xcP-ZY-G27"/>
                         <outlet property="lbNumProducts" destination="bzY-2F-vna" id="wTU-0p-HYz"/>
                         <outlet property="lbUltimaCopiaSeguridad" destination="hUq-uK-ybP" id="0x5-wv-P71"/>
+                        <segue destination="CM6-KT-pxu" kind="showDetail" identifier="goToInicio" id="5DL-1c-M8E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yog-SI-zsz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="890" y="52"/>
+        </scene>
+        <!--Inicio View Controller-->
+        <scene sceneID="2Jt-hl-W7h">
+            <objects>
+                <viewController id="CM6-KT-pxu" customClass="InicioViewController" customModule="Independence_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IGB-DT-Ywp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0kS-S8-g7y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pg-hh-hyD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1801" y="52"/>
         </scene>
     </scenes>
     <resources>
