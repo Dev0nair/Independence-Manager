@@ -21,5 +21,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDefault</string>
 </dict>
 </plist>

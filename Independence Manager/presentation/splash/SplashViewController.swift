@@ -14,11 +14,10 @@ class SplashViewController: UIBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         lbCenterText.text = "Splash!"
         
-        doAfter(seconds: AppConstants.SPLASH_TIME) {
-            self.navigateTo(Constants.Navigation.MAIN_NAV, params: ("Hola", 20))
+        doAfter(seconds: AppConfig.SPLASH_TIME) {
+            self.navigateTo(AppConfig.Navigation.MAIN_NAV)
         }
     }
     

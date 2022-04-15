@@ -7,13 +7,15 @@
 
 import Foundation
 
-class UCGetAllFood : BaseUseCase<[Food]> {
+class UCGetAllFood : BaseUseCase<[ObjFood]> {
     private let foodRepository: FoodProtocol = FoodRepositoryFactory.getRepository()
 
-    func execute(onLoad: @escaping ([Food]) -> Void) {
+    func execute(onLoad: @escaping ([ObjFood]) -> Void) {
         
         self.doWork {
-            self.foodRepository.getListFood()
+            self.foodRepository
+                .getListFood()
+                .map { item in item.map()! }
         } front: { list in
             onLoad(list)
         }

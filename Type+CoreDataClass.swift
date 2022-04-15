@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Type)
-public class Type: NSManagedObject {
+@objc(ElementType)
+public class ElementType: NSManagedObject {
 
 }

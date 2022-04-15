@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension Type {
+extension ElementType {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Type> {
-        return NSFetchRequest<Type>(entityName: "ElementType")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<ElementType> {
+        return NSFetchRequest<ElementType>(entityName: "ElementType")
     }
 
     @NSManaged public var id: UUID?
@@ -22,6 +22,6 @@ extension Type {
 
 }
 
-extension Type : Identifiable {
+extension ElementType : Identifiable {
 
 }

@@ -20,6 +20,14 @@ extension Food {
     @NSManaged public var name: String?
     @NSManaged public var desc: String?
     @NSManaged public var image: String?
+    
+    func map() -> ObjFood? {
+        guard let id = self.id else { return nil; }
+        
+        return ObjFood(
+            id: id, name: self.name ?? "", image: self.image ?? "", desc: self.desc ?? "")
+        
+    }
 
 }
 

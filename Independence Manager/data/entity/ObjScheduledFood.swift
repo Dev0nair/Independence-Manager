@@ -12,5 +12,7 @@ struct ObjScheduledFood {
     var food: ObjFood
     var composition: [ObjIngredientComposition]
     var available: Bool?
+    var date: Date
+    var type: ElementType
 
 }

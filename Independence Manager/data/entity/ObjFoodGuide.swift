@@ -9,6 +9,7 @@ import Foundation
 
 struct ObjFoodStep {
     
+    var idFood: UUID
     var orden: Decimal
     var description: String
     

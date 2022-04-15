@@ -7,8 +7,45 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class PFoodRepository : BaseRepo, FoodProtocol {
+    
+    func getFoodScheduleNext7Days(idFood: UUID) -> [ScheduledFood] {
+        do {
+            return try context.fetch(ScheduledFood.fetchRequest())
+        } catch {
+            return []
+        }
+    }
+    
+    func setFoodScheduleForDay(obj scheduledFood: ObjScheduledFood) -> Bool {
+        guard let nsEntity = NSEntityDescription.entity(forEntityName: "ScheduledFood", in: self.context) else { return false; }
+        
+        ScheduledFood(entity: nsEntity, insertInto: self.context)
+        return save()
+    }
+    
+    func getFoodGuide(idFood: UUID) -> [FoodGuide] {
+        do {
+            return try context.fetch(FoodGuide.fetchRequest())
+                .filter{ item in
+                    item.idFood == idFood }
+        } catch {
+            return []
+        }
+    }
+    
+    func setFoodGuide(step: ObjFoodStep) -> Bool {
+        guard let nsEntity = NSEntityDescription.entity(forEntityName: "FoodGuide", in: self.context) else {
+            return false;
+            
+        }
+        
+        FoodGuide(entity: nsEntity, insertInto: self.context)
+        return save()
+    }
+    
             
     func getListFood() -> [Food] {
         

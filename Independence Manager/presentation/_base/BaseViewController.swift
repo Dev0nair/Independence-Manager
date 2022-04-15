@@ -38,6 +38,9 @@ class UIBaseViewController : UIViewController {
     
 }
 
+/**
+ *  Public Region
+ */
 extension UIBaseViewController {
         
     func doAfter(seconds: Double, work: @escaping () -> Void) {
@@ -50,9 +53,13 @@ extension UIBaseViewController {
         self.performSegue(withIdentifier: segueId, sender: self)
     }
     
+}
+
+/**
+ *  Private Region
+ */
+extension UIBaseViewController {
     private func newSending(dest: String, params: Any?) -> (dest: String, params: Any?) {
         return (dest, params)
     }
-    
 }
-

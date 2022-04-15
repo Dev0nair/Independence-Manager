@@ -13,7 +13,7 @@ class FoodRepositoryFactory {
     
     private static func createRepository() -> FoodProtocol {
         print("FoodRepository: Created")
-        switch(AppConstants.APP_COMPILATION) {
+        switch(AppConfig.APP_COMPILATION) {
             case CompilationType.DEBUG: return DFoodRepository()
             case CompilationType.PRO: return PFoodRepository()
         }

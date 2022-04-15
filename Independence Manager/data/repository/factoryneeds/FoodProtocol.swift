@@ -16,5 +16,9 @@ protocol FoodProtocol {
     func getFood(idFood: UUID) -> Food?
     func getIngredients(idFood: UUID) -> [FoodComposition]
     
+    func getFoodScheduleNext7Days(idFood: UUID) -> [ScheduledFood]
+    func setFoodScheduleForDay(obj scheduledFood: ObjScheduledFood) -> Bool
     
+    func getFoodGuide(idFood: UUID) -> [FoodGuide]
+    func setFoodGuide(step: ObjFoodStep) -> Bool
 }

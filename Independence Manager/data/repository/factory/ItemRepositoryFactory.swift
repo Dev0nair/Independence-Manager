@@ -13,7 +13,7 @@ class ItemRepositoryFactory {
     
     private static func createInstance() -> ItemProtocol {
         print("ItemRepository: Created")
-        switch(AppConstants.APP_COMPILATION) {
+        switch(AppConfig.APP_COMPILATION) {
             case CompilationType.DEBUG: return DItemRepository()
             case CompilationType.PRO: return PItemRepository()
         }

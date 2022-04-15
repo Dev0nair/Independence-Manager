@@ -13,4 +13,5 @@ struct ObjFood {
     var name: String
     var image: String
     var available: Bool?
+    var desc: String
 }

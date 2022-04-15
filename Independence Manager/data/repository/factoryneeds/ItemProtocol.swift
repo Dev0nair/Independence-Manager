@@ -13,7 +13,13 @@ protocol ItemProtocol {
     func getNonIngredientProducts() -> [Item]
     
     func getItem(idItem: UUID) -> Item?
-    func newItem(item: Item) -> Bool
+    func newItem(item: ObjItem) -> Bool
     func deleteItem(idItem: UUID) -> Bool
     
+    func getIngredientsOf(idFood: UUID) -> [Item]
+
+    func getShops() -> [Shop]
+    func getShop(idShop: UUID) -> Shop?
+    func setShop(shop: Shop) -> Bool
+
 }
