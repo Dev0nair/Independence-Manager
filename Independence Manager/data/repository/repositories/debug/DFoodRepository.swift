@@ -18,6 +18,11 @@ class DFoodRepository : BaseRepo, FoodProtocol {
         super.init()
         
         self.listFood = [Food(context: context), Food(context: context), Food(context: context) ]
+        
+        for food in listFood {
+            food.id = UUID()
+            food.desc = "Comida nº \(listFood.firstIndex(of: food) ?? 0)"
+        }
     }
     
     func getFoodScheduleNext7Days(idFood: UUID) -> [ScheduledFood] {

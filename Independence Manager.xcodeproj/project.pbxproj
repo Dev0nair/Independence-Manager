@@ -294,7 +294,6 @@
 			isa = PBXGroup;
 			children = (
 				1C4DAC6C2808ACFD00CCF3B4 /* foodsoptions */,
-				1C4DAC682808ACCA00CCF3B4 /* FoodsOptionViewController.swift */,
 			);
 			path = options;
 			sourceTree = "<group>";
@@ -302,6 +301,7 @@
 		1C4DAC6C2808ACFD00CCF3B4 /* foodsoptions */ = {
 			isa = PBXGroup;
 			children = (
+				1C4DAC682808ACCA00CCF3B4 /* FoodsOptionViewController.swift */,
 				1C4DAC6D2808AD4900CCF3B4 /* FoodsOptionViewModel.swift */,
 			);
 			path = foodsoptions;

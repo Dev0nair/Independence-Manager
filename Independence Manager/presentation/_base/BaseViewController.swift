@@ -34,6 +34,10 @@ class UIBaseViewController : UIViewController {
         self.sending.removeAll { (dest: String, params: Any?) in
             dest == segue.identifier
         }
+        
+        if let sheet = newBaseViewController.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
     }
     
 }

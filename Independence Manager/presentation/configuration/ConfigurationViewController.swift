@@ -16,10 +16,11 @@ class ConfigurationViewController: UIBaseViewController{
     @IBOutlet weak var lbNumProducts: UILabel!
     
     @IBOutlet weak var optionsLayout: UIStackView!
-    @IBOutlet weak var opcionTL: UIView!
-    @IBOutlet weak var opcionTR: UIView!
-    @IBOutlet weak var opcionBL: UIView!
-    @IBOutlet weak var opcionBR: UIView!
+    @IBOutlet weak var opcionComidas: UIView!
+    @IBOutlet weak var opcionProductos: UIView!
+    @IBOutlet weak var opcionIngredientes: UIView!
+    @IBOutlet weak var opcionBackup: UIView!
+    
     
     private let confVM = ConfigurationViewModel()
     private let roundSize = 45
@@ -30,7 +31,10 @@ class ConfigurationViewController: UIBaseViewController{
         // Do any additional setup after loading the view.
         title = "Información"
         
+        roundViews()
         configListener()
+        configOptionsClick()
+        
         roundOptionsCornersLayout()
         roundOptionsCorners()
         
@@ -39,6 +43,24 @@ class ConfigurationViewController: UIBaseViewController{
     
     override func viewWillDisappear(_ animated: Bool) {
         confVM.cancel()
+    }
+}
+
+extension ConfigurationViewController {
+    @objc private func onClickProductsOption() {
+        print("Productos")
+    }
+    
+    @objc private func onClickFoodsOption() {
+        navigateTo(AppConfig.Navigation.SHOW_FOODS)
+    }
+    
+    @objc private func onClickIngredientsOption() {
+        print("Ingredientes!")
+    }
+    
+    @objc private func onClickBackupOption() {
+        print("Backup!")
     }
 }
 
@@ -62,6 +84,18 @@ extension ConfigurationViewController {
         self.lbNumProducts.text = info.numProducts.formatted()
     }
     
+    private func configOptionsClick() {
+        self.opcionProductos.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClickProductsOption)))
+        self.opcionIngredientes.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClickIngredientsOption)))
+        self.opcionComidas.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClickFoodsOption)))
+        self.opcionBackup.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClickBackupOption)))
+    }
+    
+    private func roundViews() {
+        roundOptionsCornersLayout()
+        roundOptionsCorners()
+    }
+    
     private func roundOptionsCornersLayout() {
         // Se redondea las esquinas superiores del layout de opcoiones
         let path = UIBezierPath(roundedRect: self.optionsLayout.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: self.roundSize, height: self.roundSize))
@@ -72,9 +106,9 @@ extension ConfigurationViewController {
     
     private func roundOptionsCorners() {
         // Se redondea las esquinas de las opciones
-        self.opcionTL.layer.cornerRadius = 45
-        self.opcionTR.layer.cornerRadius = 45
-        self.opcionBL.layer.cornerRadius = 45
-        self.opcionBR.layer.cornerRadius = 45
+        self.opcionComidas.layer.cornerRadius = 45
+        self.opcionProductos.layer.cornerRadius = 45
+        self.opcionIngredientes.layer.cornerRadius = 45
+        self.opcionBackup.layer.cornerRadius = 45
     }
 }

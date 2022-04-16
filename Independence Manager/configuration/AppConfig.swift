@@ -14,7 +14,7 @@ enum CompilationType {
 struct AppConfig {
     
     static let SPLASH_TIME = 2.0
-    static let APP_COMPILATION = CompilationType.PRO
+    static let APP_COMPILATION = CompilationType.DEBUG
     
     struct DBConstants {
         static let INGREDIENT_TYPE = UUID.init(uuidString: "001")
@@ -22,5 +22,6 @@ struct AppConfig {
     
     struct Navigation {
         static let MAIN_NAV = "goToMainNav"
+        static let SHOW_FOODS = "showFoods"
     }
 }
