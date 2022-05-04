@@ -11,6 +11,7 @@
 		1C13268728018AD600F3CBD9 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13268628018AD600F3CBD9 /* ConfigurationViewController.swift */; };
 		1C13268928018AF700F3CBD9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13268828018AF700F3CBD9 /* BaseViewController.swift */; };
 		1C13268D28019ADF00F3CBD9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13268C28019ADF00F3CBD9 /* AppConfig.swift */; };
+		1C1F7FB92815ED7400D6226D /* CustomModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F7FB82815ED7400D6226D /* CustomModal.swift */; };
 		1C1FAB552801E564004821EB /* FoodComposition+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1FAB472801E564004821EB /* FoodComposition+CoreDataClass.swift */; };
 		1C1FAB562801E564004821EB /* FoodComposition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1FAB482801E564004821EB /* FoodComposition+CoreDataProperties.swift */; };
 		1C1FAB572801E564004821EB /* ScheduledFood+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1FAB492801E564004821EB /* ScheduledFood+CoreDataClass.swift */; };
@@ -81,6 +82,7 @@
 		1C13268628018AD600F3CBD9 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		1C13268828018AF700F3CBD9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1C13268C28019ADF00F3CBD9 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		1C1F7FB82815ED7400D6226D /* CustomModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModal.swift; sourceTree = "<group>"; };
 		1C1FAB472801E564004821EB /* FoodComposition+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodComposition+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		1C1FAB482801E564004821EB /* FoodComposition+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodComposition+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		1C1FAB492801E564004821EB /* ScheduledFood+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduledFood+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -161,6 +163,7 @@
 		1C13267C2801885800F3CBD9 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				1C1F7FB72815ED6700D6226D /* example */,
 				1C132682280188B500F3CBD9 /* _base */,
 				1C1326812801889F00F3CBD9 /* configuration */,
 				1C1326802801888C00F3CBD9 /* splash */,
@@ -230,6 +233,7 @@
 		1C132682280188B500F3CBD9 /* _base */ = {
 			isa = PBXGroup;
 			children = (
+				1C1F7FB82815ED7400D6226D /* CustomModal.swift */,
 				1C13268828018AF700F3CBD9 /* BaseViewController.swift */,
 				1CD889932802BE8B00977645 /* Box.swift */,
 			);
@@ -242,6 +246,13 @@
 				1C13268C28019ADF00F3CBD9 /* AppConfig.swift */,
 			);
 			path = configuration;
+			sourceTree = "<group>";
+		};
+		1C1F7FB72815ED6700D6226D /* example */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = example;
 			sourceTree = "<group>";
 		};
 		1C1FAB652801E617004821EB /* factory */ = {
@@ -555,6 +566,7 @@
 				1C4DAC692808ACCA00CCF3B4 /* FoodsOptionViewController.swift in Sources */,
 				1CD889942802BE8B00977645 /* Box.swift in Sources */,
 				1C1FAB5D2801E564004821EB /* FoodGuide+CoreDataClass.swift in Sources */,
+				1C1F7FB92815ED7400D6226D /* CustomModal.swift in Sources */,
 				1C1FAB682801E652004821EB /* FoodRepositoryFactory.swift in Sources */,
 				1CD889842802B93300977645 /* ItemProtocol.swift in Sources */,
 				1CD8899A2802CC8100977645 /* ObjConfigTopInfo.swift in Sources */,

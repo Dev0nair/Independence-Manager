@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "solomillo-al-whisky-whiskey-sauce-recipe-1.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "solomillo-al-whisky-whiskey-sauce-recipe-2.jpeg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "solomillo-al-whisky-whiskey-sauce-recipe-3.jpeg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -18,18 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-Wu-RJR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-Wu-RJR">
                                 <rect key="frame" x="186" y="464.5" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="rUA-LT-voi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cdt-zU-o75"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dLA-Wu-RJR" firstAttribute="centerX" secondItem="Cdt-zU-o75" secondAttribute="centerX" id="K7W-Z1-0GJ"/>
-                            <constraint firstItem="dLA-Wu-RJR" firstAttribute="centerY" secondItem="Cdt-zU-o75" secondAttribute="centerY" id="KR6-4a-1Db"/>
+                            <constraint firstItem="rUA-LT-voi" firstAttribute="leading" secondItem="Rzg-SH-YNZ" secondAttribute="leading" id="Pqb-5f-Uck"/>
+                            <constraint firstAttribute="bottom" secondItem="rUA-LT-voi" secondAttribute="bottom" id="dkm-Ej-lg5"/>
+                            <constraint firstAttribute="trailing" secondItem="rUA-LT-voi" secondAttribute="trailing" id="i08-ka-B4k"/>
+                            <constraint firstItem="rUA-LT-voi" firstAttribute="top" secondItem="Rzg-SH-YNZ" secondAttribute="top" id="ieB-ng-fUj"/>
                         </constraints>
                     </view>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -320,7 +326,6 @@ seguridad</string>
                         <outlet property="opcionIngredientes" destination="igd-5i-y6L" id="wzX-d6-Llq"/>
                         <outlet property="opcionProductos" destination="lEY-kh-2Uz" id="knq-uk-jjE"/>
                         <outlet property="optionsLayout" destination="VBk-oZ-vZ2" id="myK-oK-GAV"/>
-                        <segue destination="HCy-pZ-Jcl" kind="showDetail" identifier="showFoods" id="3Cv-9Y-icd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yog-SI-zsz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -332,24 +337,12 @@ seguridad</string>
             <objects>
                 <viewController title="Comidas" modalPresentationStyle="formSheet" id="HCy-pZ-Jcl" customClass="FoodsOptionViewController" customModule="Independence_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="bottom" semanticContentAttribute="playback" id="Jfv-Ew-JKC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mdH-F2-QJP">
-                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comidas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3R-7f-ovg" userLabel="Titulo">
-                                        <rect key="frame" x="8" y="15" width="398" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iOM-cA-te8">
-                                        <rect key="frame" x="8" y="65" width="398" height="725"/>
-                                        <color key="backgroundColor" red="1" green="0.90196078430000004" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="sectionIndexBackgroundColor" red="1" green="0.90196078430000004" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableView>
-                                </subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mdH-F2-QJP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <edgeInsets key="layoutMargins" top="15" left="8" bottom="8" right="8"/>
                             </stackView>
                         </subviews>
@@ -357,16 +350,7 @@ seguridad</string>
                         <color key="backgroundColor" red="1" green="0.90196078431372551" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" name="AccentColor"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.59999999999999998"/>
-                        <constraints>
-                            <constraint firstItem="mdH-F2-QJP" firstAttribute="trailing" secondItem="hw4-jL-Rfw" secondAttribute="trailing" id="1Sz-ge-PXH"/>
-                            <constraint firstItem="mdH-F2-QJP" firstAttribute="leading" secondItem="hw4-jL-Rfw" secondAttribute="leading" id="XN2-I5-d2P"/>
-                            <constraint firstAttribute="bottom" secondItem="mdH-F2-QJP" secondAttribute="bottom" id="euS-md-z0v"/>
-                            <constraint firstItem="mdH-F2-QJP" firstAttribute="top" secondItem="hw4-jL-Rfw" secondAttribute="top" id="zEJ-TK-0R6"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="foodList" destination="iOM-cA-te8" id="f0u-im-Yxa"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJs-j4-b5P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -378,6 +362,7 @@ seguridad</string>
         <image name="ConfigOptComidas" width="354" height="236"/>
         <image name="ConfigOptIngredients" width="138.5" height="91"/>
         <image name="ConfigOptProducts" width="300" height="200"/>
+        <image name="Splash" width="332.5" height="591"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -17,12 +17,18 @@ class DFoodRepository : BaseRepo, FoodProtocol {
     override init() {
         super.init()
         
-        self.listFood = [Food(context: context), Food(context: context), Food(context: context) ]
-        
-        for food in listFood {
-            food.id = UUID()
-            food.desc = "Comida nº \(listFood.firstIndex(of: food) ?? 0)"
-        }
+		let food1 = Food(context: context)
+		food1.id = UUID()
+		food1.desc = "Solomillo al whisky"
+		food1.image = "Solomillo Whisky"
+		
+		
+		let food2 = Food(context: context)
+		food2.id = UUID()
+		food2.desc = "Tortilla Francesa"
+		food2.image = "Tortilla Francesa"
+		
+		self.listFood = [ food1, food2 ]
     }
     
     func getFoodScheduleNext7Days(idFood: UUID) -> [ScheduledFood] {

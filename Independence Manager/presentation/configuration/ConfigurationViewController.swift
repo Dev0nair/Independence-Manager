@@ -8,7 +8,7 @@
 import UIKit
 
 class ConfigurationViewController: UIBaseViewController{
-
+    
     
     @IBOutlet weak var lbUltimaCopiaSeguridad: UILabel!
     @IBOutlet weak var lbNumComidas: UILabel!
@@ -27,7 +27,7 @@ class ConfigurationViewController: UIBaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         title = "Información"
         
@@ -52,7 +52,7 @@ extension ConfigurationViewController {
     }
     
     @objc private func onClickFoodsOption() {
-        navigateTo(AppConfig.Navigation.SHOW_FOODS)
+		showModal(FoodsOptionViewController(), params: { print("El parametro!") })
     }
     
     @objc private func onClickIngredientsOption() {
@@ -97,7 +97,7 @@ extension ConfigurationViewController {
     }
     
     private func roundOptionsCornersLayout() {
-        // Se redondea las esquinas superiores del layout de opcoiones
+        // Se redondea las esquinas superiores del layout de opciones
         let path = UIBezierPath(roundedRect: self.optionsLayout.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: self.roundSize, height: self.roundSize))
         let mask = CAShapeLayer()
         mask.path = path.cgPath

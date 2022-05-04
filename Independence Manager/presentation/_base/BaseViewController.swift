@@ -7,18 +7,18 @@
 
 import UIKit
 
-class UIBaseViewController : UIViewController {
+open class UIBaseViewController : UIViewController {
     
     private var sending = [(dest: String, params: Any?)]()
     var params: Any? = nil
     
-    override func viewWillAppear(_ animated: Bool) {
+    open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        print("Clase: \(self.description). Params: \(String(describing: params))")
+		print("Clase: \(self.description.split(separator: ":")[0])>. Params: \(String(describing: params))")
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Recuperamos el item que queríamos enviar al destino
         guard let sendingItem = sending.first(where: { item in
             item.dest == segue.identifier
@@ -35,9 +35,11 @@ class UIBaseViewController : UIViewController {
             dest == segue.identifier
         }
         
-        if let sheet = newBaseViewController.sheetPresentationController {
-            sheet.detents = [.medium()]
-        }
+//        if let sheet = newBaseViewController.sheetPresentationController {
+//            sheet.detents = [.medium(), .large()]
+//            sheet.preferredCornerRadius = 45
+//            sheet.prefersGrabberVisible = true
+//        }
     }
     
 }
@@ -46,7 +48,7 @@ class UIBaseViewController : UIViewController {
  *  Public Region
  */
 extension UIBaseViewController {
-        
+    
     func doAfter(seconds: Double, work: @escaping () -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: work)
     }
@@ -57,6 +59,11 @@ extension UIBaseViewController {
         self.performSegue(withIdentifier: segueId, sender: self)
     }
     
+    func showModal(_ modalViewController: CustomModal, params: Any? = nil) {
+        modalViewController.params = params
+        modalViewController.modalPresentationStyle = .overCurrentContext
+        present(modalViewController, animated: false, completion: nil)
+    }
 }
 
 /**
@@ -65,5 +72,22 @@ extension UIBaseViewController {
 extension UIBaseViewController {
     private func newSending(dest: String, params: Any?) -> (dest: String, params: Any?) {
         return (dest, params)
+    }
+    
+    func dropShadow(color: UIColor, opacity: Float = 1, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true, layer: CALayer) {
+        layer.masksToBounds = false
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = offSet
+        layer.shadowRadius = radius
+        
+        let alphaColor = color.cgColor.copy(alpha: 0.05)
+
+        
+        layer.borderWidth = 1
+        layer.borderColor = alphaColor
+        layer.shadowPath = UIBezierPath(rect: self.view.bounds).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
 }
